@@ -60,21 +60,6 @@ export function App() {
 
   useEffect(() => {
     axios
-      .get(
-        "https://gnews.io/api/v4/top-headlines?lang=en&category=business&apikey=5ff8585f9ec438acfacef3cea3ba6587",
-        {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "*",
-            "Access-Control-Allow-Credentials": "true",
-          },
-        }
-      )
-      .then((obj1) => {
-        console.log("res", obj1);
-      });
-
-    axios
       .all([
         axios.get(`${backendURL}/product/getAllProducts`),
         axios.get(`${backendURL}/product/getAllCategories`),
